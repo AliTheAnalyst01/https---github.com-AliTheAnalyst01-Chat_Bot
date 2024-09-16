@@ -1,18 +1,21 @@
 import streamlit as st
 from langchain.schema import HumanMessage, AIMessage, SystemMessage
 from langchain_openai import ChatOpenAI
-
+import openai
 from dotenv import load_dotenv
 
+# Load environment variables from .env file (optional)
 load_dotenv()
 import os
-import openai
 
-# Set the OpenAI API key from the environment variable
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# **Ensure .env file is in the same directory as chat_bot.py**
+
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Set API key from environment variable
 
 # Initialize the ChatOpenAI model
 chat = ChatOpenAI(temperature=0.5)
+
+# Rest of your code...
 
 # Set up Streamlit page configuration
 st.set_page_config(page_title="Faizan Chatbot")
