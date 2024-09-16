@@ -8,7 +8,7 @@ load_dotenv()
 import os
 import openai
 
-openai.api_key = "OPENAI_API_KEY"
+openai.api_key = os.get_enviroment["OPENAI_API_KEY"]
 
 # Initialize the ChatOpenAI model
 chat = ChatOpenAI(temperature=0.5)
